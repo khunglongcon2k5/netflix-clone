@@ -90,3 +90,15 @@
     accent-color: #1a73e8;
     margin: 0;
 }
+
+.form-switch {
+    margin-top: 40px;
+    color: #737373;
+}
+
+.form-switch span {
+    margin-left: 6px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
