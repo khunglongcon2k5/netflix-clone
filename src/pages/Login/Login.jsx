@@ -2,14 +2,28 @@ import { useState } from "react";
 import "./Login.css";
 import logo from "@/assets/logo.png";
 import { login, signup } from "@/firebase";
+import netflix_spinner from "@/assets/netflix_spinner.gif";
 
 const Login = () => {
   const [signState, setSignState] = useState("Sign In");
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [loading, setLoading] = useState(false);
 
-  return (
+  const user_auth = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (signState === "Sign In") await login(email, password);
+    else await signup(name, email, password);
+    setLoading(false);
+  };
+
+  return loading ? (
+    <div className="login-spinner">
+      <img src={netflix_spinner} alt="" />
+    </div>
+  ) : (
     <div className="login">
       <img src={logo} className="login-logo" alt="Netflix" />
       <div className="login-form">
@@ -19,7 +33,7 @@ const Login = () => {
             <input
               value={name}
               onChange={(e) => {
-                e.target.value;
+                setName(e.target.value);
               }}
               placeholder="Your name"
             />
@@ -29,7 +43,7 @@ const Login = () => {
           <input
             value={email}
             onChange={(e) => {
-              e.target.value;
+              setEmail(e.target.value);
             }}
             type="email"
             placeholder="Email"
@@ -37,12 +51,14 @@ const Login = () => {
           <input
             value={password}
             onChange={(e) => {
-              e.target.value;
+              setPassword(e.target.value);
             }}
             type="password"
             placeholder="Password"
           />
-          <button>{signState}</button>
+          <button onClick={user_auth} type="submit">
+            {signState}
+          </button>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" />
