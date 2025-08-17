@@ -46,7 +46,7 @@ const Login = () => {
               setEmail(e.target.value);
             }}
             type="email"
-            placeholder="Email"
+            placeholder="Email address or mobile number"
           />
           <input
             value={password}

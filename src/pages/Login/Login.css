@@ -16,8 +16,8 @@
 .login-logo {
     width: 150px;
     position: absolute;
-    top: 20px;
-    left: 8%;
+    top: 22px;
+    left: 11%;
 }
 
 .login-form {
@@ -31,8 +31,9 @@
 
 .login-form h1 {
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 28px;
+    user-select: text;
 }
 
 .login-form input {

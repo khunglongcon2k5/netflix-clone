@@ -25,18 +25,6 @@
     background-size: cover;
 }
 
-.card-list .card {
-    position: relative;
-}
-
-.card-list .card p {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    text-decoration: none;
-    color: #fff;
-}
-
 @media (max-width: 800px) {
     .title-cards {
         margin-top: 20px;
@@ -50,10 +38,6 @@
     .card-list img {
         width: 200px;
     }
-
-    .card-list p {
-        font-size: 12px;
-    }
 }
 
 @media (max-width: 500px) {
@@ -63,9 +47,5 @@
 
     .card-list img {
         width: 165px;
-    }
-
-    .card-list p {
-        font-size: 10px;
     }
 }
